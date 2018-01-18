@@ -1,0 +1,158 @@
+// Счетчит для ol
+=counter($var)
+	counter-reset: $var
+	> li
+		&:before
+			content: counter($var)
+			counter-increment: $var
+
+
+	
+=coverdiv
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+
+=vcenter
+	position: absolute
+	top: 50%
+	left: 50%
+	+translate(-50%,-50%)
+
+=hcenter
+	position: absolute
+	top: 50%
+	+translate(0,-50%)
+
+// Выравневание блока по вертикали
+=vertical
+	text-align: center
+	font-size: 0
+	&:before
+		content: ""
+		display: inline-block
+		vertical-align: middle
+		width: 0
+		height: 100%
+
+
+
+// Указываем цвет placeholder (цвет)
+=placeholder-color($color)
+	&:-moz-placeholder,
+	&::-moz-placeholder
+		color: $color
+		opacity: 1
+	&::-webkit-input-placeholder
+		color: $color
+
+// Указываем стили для placeholder
+=placeholder
+	&:-ms-input-placeholder
+		@content
+	&:-moz-placeholder
+		@content
+	&::-moz-placeholder
+		@content
+	&::-webkit-input-placeholder
+		@content
+	&::placeholder
+		@content
+
+// triangle (ширина, высота, фон, направление стрелки)
+=arr($width, $height, $bg, $direction)
+	width: 0px
+	height: 0px
+	border-style: solid
+	@if $direction == t
+		border-width: 0 $width / 2 + px $height + px $width / 2 + px
+		border-color: transparent transparent $bg transparent
+	@if $direction == r
+		border-width: $height / 2 + px 0 $height / 2 + px $width + px
+		border-color: transparent transparent transparent $bg
+	@if $direction == b
+		border-width: $height + px $width / 2 + px 0 $width / 2 + px
+		border-color: $bg transparent transparent transparent
+	@if $direction == l
+		border-width: $height / 2 + px $width + px $height / 2 + px 0
+		border-color: transparent $bg transparent transparent
+	@if $direction == tl
+		border-width: $height + px $width + px 0 0
+		border-color: $bg transparent transparent transparent
+	@if $direction == tr
+		border-width: 0 $width + px $height + px 0
+		border-color: transparent $bg transparent transparent
+	@if $direction == br
+		border-width: 0 0 $height + px $width + px
+		border-color: transparent transparent $bg transparent
+	@if $direction == bl
+		border-width: $height + px 0 0 $width + px
+		border-color: transparent transparent transparent $bg
+
+// Подключени шрифтов (Название шрифта, название файла)
+=font($alias, $name)
+	@font-face
+		font-family: $alias
+		src: url("../fonts/" + $name + ".eot")
+		src: url("../fonts/" + $name + ".eot?#iefix") format("embedded-opentype"), url("../fonts/" + $name + ".woff2") format('woff2'), url("../fonts/" + $name + ".woff?ver1.0") format("woff"), url("../fonts/" + $name + ".ttf") format("truetype"), url("../fonts/" + $name + ".svg#" + $name + "") format("svg")
+		@content
+
+
+// Убераем размытие текста (antialiased)
+=font-smoothing($val: antialiased)
+	-webkit-font-smoothing: $val
+	-moz-font-smoothing: $val
+	-ms-font-smoothing: $val
+	-o-font-smoothing: $val
+
+// Скрываем текст и показываем 3 точки
+=text-overflow
+	overflow: hidden
+	-ms-text-overflow: ellipsis
+	text-overflow: ellipsis
+	white-space: nowrap
+
+=bg($img, $position: 0 0, $color: null, $repeat: no-repeat )
+	background: $color url("../img/#{$img}.png") $repeat $position
+
+=pulse($time: 1.5s, $iteration: infinite)
+	animation-name: pulse
+	animation-duration: $time
+	animation-iteration-count: $iteration
+
+=k-pulse
+	@keyframes pulse
+		0%
+			transform: scale(0.9)
+			opacity: 0.9 
+
+		50% 
+			transform: scale(1)
+			opacity: 1   
+
+		100% 
+			transform: scale(0.9)
+			opacity: 0.9  
+
+=bounce($time: 2s, $iteration: infinite)
+	animation-name: bounce
+	animation-duration: $time
+	animation-iteration-count: $iteration
+
+=k-bounce	
+	@keyframes bounce
+		0%, 20%, 50%, 80%, 100% 
+			transform: translateY(0)
+
+		40% 
+			transform: translateY(-30px)
+
+		60% 
+			transform: translateY(-15px)
+	  
+
+
+
+          

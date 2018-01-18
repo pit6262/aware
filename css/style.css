@@ -1,0 +1,90 @@
+/* NORMALIZE */
+/* ================================================ */
+html, body, div, span, applet, main, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, main, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+
+body { margin: 0px; padding: 0px; font-family: Arial, Tahoma, sans-serif; line-height: 1; background-color: #ffffff; height: 100%; position: relative; font-size: 14px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after { content: ""; content: none; }
+
+q:before, q:after { content: ""; content: none; }
+
+table { border-collapse: collapse; border-width: 0px; padding: 0px; margin: 0px; }
+
+html { height: 100%; -webkit-text-size-adjust: none; -ms-text-size-adjust: none; }
+
+input, textarea { color: #333; outline: none; border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; -webkit-appearance: none; }
+
+input[type="button"], input[type="submit"] { cursor: pointer; -webkit-appearance: none; outline: none; }
+
+input[type="search"] { -webkit-appearance: none; }
+
+::-ms-clear { width: 0; height: 0; }
+
+button { cursor: pointer; -webkit-appearance: none; outline: none; }
+
+td, form { margin: 0px; padding: 0px; }
+
+a { -webkit-transition: all 0.3s linear; -o-transition: all 0.3s linear; transition: all 0.3s linear; text-decoration: none; outline: none; -webkit-tap-highlight-color: transparent; -webkit-tap-highlight-color: transparent; }
+
+* { -webkit-box-sizing: border-box; box-sizing: border-box; }
+*:before, *:after { -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+.clearfix:after, .wrapper:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+
+body { color: #222; font: 400 10px "Varela Round", Arial, sans-serif; background: #FFF; }
+
+/* MAIN STYLES */
+/* ================================================ */
+.main-wrapper { padding: 0; min-width: 320px; position: relative; overflow: hidden; opacity: 1; min-height: 100%; }
+
+img { display: block; max-width: 100%; }
+
+span { display: inline-block; }
+
+/* text position */
+.text-left { text-align: left !important; }
+
+.text-center { text-align: center !important; }
+
+.text-right { text-align: right !important; }
+
+/* Icons ====================== */
+.ic { position: relative; display: inline-block; vertical-align: middle; }
+
+/* Header ====================== */
+.header { height: 80px; background-color: #ffffff; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: justify; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; padding: 0 30px; border-bottom: 1px solid #ececec; }
+
+.logo { margin-right: 40px; }
+
+.main-menu { list-style: none; margin-right: 70px; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; }
+.main-menu__item { position: relative; }
+.main-menu__item:hover .dropdown-content { display: block; }
+.main-menu__link { line-height: 80px; color: #222; font-size: 14px; display: block; padding: 0 20px; }
+.main-menu__link [class*="icon"] { font-size: 8px; color: #1f4ba5; }
+
+.dropdown-content { position: absolute; background: #222; padding: 30px; width: 240px; display: none; top: 100%; left: -10px; }
+.dropdown-content:before { content: ""; display: block; position: absolute; bottom: 100%; width: 0px; height: 0px; border-style: solid; border-width: 0 7px 7px 7px; border-color: transparent transparent #222 transparent; }
+
+.dropdown-menu { list-style: none; }
+.dropdown-menu__item { margin-bottom: 8px; }
+.dropdown-menu__link { font-size: 12px; line-height: 16px; color: #bcbcbc; }
+.dropdown-menu__link:hover { color: #fff; }
+
+.search { -webkit-box-flex: 1; -webkit-flex: 1; -ms-flex: 1; flex: 1; position: relative; margin-right: 50px; }
+.search__input { width: 100%; height: 30px; background-color: #f6f6f6; padding: 0 40px 0 20px; color: #222; font-family: "PT Serif", sans-serif; font-size: 12px; border: none; border-radius: 20px; }
+.search__input:-ms-input-placeholder { font-style: italic; color: #868686; }
+.search__input::-moz-placeholder { font-style: italic; color: #868686; }
+.search__input::-webkit-input-placeholder { font-style: italic; color: #868686; }
+.search__input::-ms-input-placeholder { font-style: italic; color: #868686; }
+.search__input::placeholder { font-style: italic; color: #868686; }
+.search__button { position: absolute; top: 5px; right: 8px; font-family: "icomoon" !important; background-color: transparent; border: none; font-size: 18px; }
+
+.location__link { color: #868686; font-size: 12px; }
+.location [class*="icon"] { font-size: 18px; color: #222; margin-right: 5px; }
+
+/*# sourceMappingURL=style.css.map */
