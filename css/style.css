@@ -59,19 +59,27 @@ span { display: inline-block; }
 /* Header ====================== */
 .header { height: 80px; background-color: #ffffff; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: justify; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; padding: 0 30px; border-bottom: 1px solid #ececec; }
 
-.logo { margin-right: 40px; }
+.logo { margin-right: 40px; padding-bottom: 7px; }
 
 .main-menu { list-style: none; margin-right: 70px; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; }
-.main-menu__item { position: relative; }
-.main-menu__item:hover .dropdown-content { display: block; }
 .main-menu__link { line-height: 80px; color: #222; font-size: 14px; display: block; padding: 0 20px; }
 .main-menu__link [class*="icon"] { font-size: 8px; color: #1f4ba5; }
 
-.dropdown-content { position: absolute; background: #222; padding: 30px; width: 240px; display: none; top: 100%; left: -10px; }
+.dropdown { position: relative; }
+.dropdown:hover .dropdown-content { opacity: 1; margin-top: 0; left: -10px; visibility: visible; }
+.dropdown--right:hover .dropdown-content { left: auto; right: -10px; }
+.dropdown--right .dropdown-content:before { right: 30px; z-index: 1; }
+.dropdown--right .dropdown-content:after { right: 29px; }
+.dropdown--white .dropdown-content { background: #fff; border: 1px solid #ececec; padding: 0; }
+.dropdown--white .dropdown-content:before { border-bottom-color: #fff; }
+.dropdown--white .dropdown-content:after { content: ""; display: block; position: absolute; bottom: 100%; width: 0px; height: 0px; border-style: solid; border-width: 0 8px 9px 8px; border-color: transparent transparent #ececec transparent; }
+
+.dropdown-content { position: absolute; background: #222; padding: 30px; width: 240px; top: 100%; left: -10000px; visibility: hidden; opacity: 0; margin-top: 30px; -webkit-transition: opacity 0.3s, margin-top 0.4s; -o-transition: opacity 0.3s, margin-top 0.4s; transition: opacity 0.3s, margin-top 0.4s; }
 .dropdown-content:before { content: ""; display: block; position: absolute; bottom: 100%; width: 0px; height: 0px; border-style: solid; border-width: 0 7px 7px 7px; border-color: transparent transparent #222 transparent; }
 
 .dropdown-menu { list-style: none; }
 .dropdown-menu__item { margin-bottom: 8px; }
+.dropdown-menu__item:last-child { margin-bottom: 0; }
 .dropdown-menu__link { font-size: 12px; line-height: 16px; color: #bcbcbc; }
 .dropdown-menu__link:hover { color: #fff; }
 
@@ -84,7 +92,24 @@ span { display: inline-block; }
 .search__input::placeholder { font-style: italic; color: #868686; }
 .search__button { position: absolute; top: 5px; right: 8px; font-family: "icomoon" !important; background-color: transparent; border: none; font-size: 18px; }
 
+.location { margin-right: 50px; }
 .location__link { color: #868686; font-size: 12px; }
 .location [class*="icon"] { font-size: 18px; color: #222; margin-right: 5px; }
+
+.profile-menu { list-style: none; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; margin-right: -20px; }
+.profile-menu__link { display: block; line-height: 80px; padding: 0 20px; }
+.profile-menu__link [class*="icon"] { font-size: 18px; color: #222; vertical-align: middle; }
+
+.basket { line-height: 1.4; position: relative; }
+.basket .badge { position: absolute; top: -8px; right: -9px; }
+
+.b-price { vertical-align: middle; margin-left: 15px; color: #222; font-family: "Oswald"; font-size: 12px; font-weight: 700; letter-spacing: 1.2px; }
+
+.badge { min-width: 16px; height: 16px; padding: 0 4px; background-color: #1f4ba5; border-radius: 50%; display: inline-block; vertical-align: middle; text-align: center; line-height: 17px; color: #fff; font-size: 9px; }
+
+.user-menu { list-style: none; }
+.user-menu__item { border-bottom: 1px solid #ececec; }
+.user-menu__item:last-child { border-bottom: none; }
+.user-menu__link { display: block; color: #222; font-size: 12px; font-weight: 400; line-height: 40px; padding: 0 20px; }
 
 /*# sourceMappingURL=style.css.map */

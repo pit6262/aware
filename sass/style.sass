@@ -7,6 +7,7 @@ $font-weight: 400
 $font-size: 14px
 $line-height: 1.4
 $font-family: "Varela Round" 
+$font-family2: 'Oswald'
 $color: #222
 $color-blue: #1f4ba5
 
@@ -74,15 +75,12 @@ span
 
 .logo 
 	margin-right: 40px
+	padding-bottom: 7px
 .main-menu
 	list-style: none
 	margin-right: 70px
 	display: flex
-	&__item 	
-		position: relative
-		&:hover 
-			.dropdown-content
-				display: block
+				
 	&__link 
 		line-height: 80px
 		color: $color
@@ -93,14 +91,52 @@ span
 			font-size: 8px
 			color: $color-blue
 
+
+.dropdown
+	position: relative
+	&:hover
+		.dropdown-content 
+			opacity: 1
+			margin-top: 0
+			left: -10px
+			visibility: visible
+	&--right 
+		&:hover 
+			.dropdown-content 
+				left: auto
+				right: -10px
+
+		.dropdown-content 
+			&:before 
+				right: 30px
+				z-index: 1
+			&:after 
+				right: 29px
+	&--white 
+		.dropdown-content
+			background: #fff
+			border: 1px solid #ececec
+			padding: 0
+			&:before 
+				border-bottom-color: #fff
+			&:after 
+				content: ''
+				display: block
+				position: absolute
+				bottom: 100%
+				+arr(16, 9, #ececec, t)
+
 .dropdown-content
 	position: absolute
 	background: $color
 	padding: 30px
 	width: 240px
-	display: none
 	top: 100%
-	left: -10px
+	left: -10000px
+	visibility: hidden
+	opacity: 0
+	margin-top: 30px
+	transition: opacity 0.3s, margin-top 0.4s
 	&:before 
 		content: ''
 		display: block
@@ -108,10 +144,14 @@ span
 		bottom: 100%
 		+arr(14, 7, $color, t)
 
+
+
 .dropdown-menu 
 	list-style: none
 	&__item 
 		margin-bottom: 8px
+		&:last-child 
+			margin-bottom: 0
 	&__link 
 		font-size: 12px
 		line-height: 16px
@@ -147,6 +187,7 @@ span
 		font-size: 18px
 
 .location 
+	margin-right: 50px
 	&__link 
 		color: #868686
 		font-size: 12px
@@ -154,3 +195,64 @@ span
 		font-size: 18px
 		color: $color
 		margin-right: 5px
+
+
+
+.profile-menu
+	list-style: none
+	display: flex
+	margin-right: -20px
+
+	&__link 
+		display: block
+		line-height: 80px
+		padding: 0 20px
+		[class*="icon"]
+			font-size: 18px
+			color: $color
+			vertical-align: middle
+
+.basket
+	line-height: $line-height
+	position: relative
+	.badge 
+		position: absolute
+		top: -8px
+		right: -9px
+
+.b-price
+	vertical-align: middle
+	margin-left: 15px
+	color: $color
+	font-family: $font-family2
+	font-size: 12px
+	font-weight: 700
+	letter-spacing: 1.2px
+
+.badge 
+	min-width: 16px
+	height: 16px
+	padding: 0 4px
+	background-color: $color-blue
+	border-radius: 50%
+	display: inline-block
+	vertical-align: middle
+	text-align: center
+	line-height: 17px
+	color: #fff
+	font-size: 9px
+
+
+.user-menu 
+	list-style: none
+	&__item 
+		border-bottom: 1px solid #ececec
+		&:last-child 
+			border-bottom: none
+	&__link 
+		display: block
+		color: $color
+		font-size: 12px
+		font-weight: 400
+		line-height: 40px
+		padding: 0 20px
