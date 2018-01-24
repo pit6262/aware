@@ -8,8 +8,10 @@ $font-size: 14px
 $line-height: 1.4
 $font-family: "Varela Round" 
 $font-family2: 'Oswald'
+$font-family3: "PT Serif"
 $color: #222
 $color-blue: #1f4ba5
+$color-danger: #ff3f2b
 
 
 body 	
@@ -60,6 +62,24 @@ span
 // 	.ic--#{$i}
 // 		+s(ic--#{$i})
 
+/* Buttons
+     ====================== */
+
+.btn 
+	display: inline-flex
+	align-items: center
+	justify-content: center
+	color: #fff
+	height: 30px
+	background-color: $color-blue
+	padding: 0 25px
+	border-radius: 20px
+	font-family: $font-family, Arial, sans-serif
+	font-size: 12px
+	font-weight: 400
+
+
+
 
 /* Header
      ====================== */
@@ -74,7 +94,7 @@ span
 	border-bottom: 1px solid #ececec
 
 .logo 
-	margin-right: 40px
+	margin-right: 38px
 	padding-bottom: 7px
 .main-menu
 	list-style: none
@@ -86,8 +106,9 @@ span
 		color: $color
 		font-size: 14px
 		display: block
-		padding: 0 20px
+		padding: 0 21px
 		[class*="icon"]
+			margin-left: 3px
 			font-size: 8px
 			color: $color-blue
 
@@ -132,6 +153,7 @@ span
 	padding: 30px
 	width: 240px
 	top: 100%
+	z-index: 99
 	left: -10000px
 	visibility: hidden
 	opacity: 0
@@ -162,7 +184,7 @@ span
 .search 
 	flex: 1
 	position: relative
-	margin-right: 50px
+	margin-right: 48px
 	&__input 
 		width: 100%
 		height: 30px
@@ -180,37 +202,39 @@ span
 	&__button 
 		position: absolute
 		top: 5px 
-		right: 8px
+		right: 3px
 		font-family: 'icomoon' !important
 		background-color: transparent
 		border: none
 		font-size: 18px
 
 .location 
-	margin-right: 50px
+	margin-right: 47px
 	&__link 
 		color: #868686
 		font-size: 12px
 	[class*="icon"]
-		font-size: 18px
+		font-size: 20px
 		color: $color
-		margin-right: 5px
+		margin-right: 6px
 
 
 
 .profile-menu
 	list-style: none
 	display: flex
-	margin-right: -20px
+	margin-right: -17px
 
 	&__link 
 		display: block
 		line-height: 80px
-		padding: 0 20px
+		padding: 0 17px
 		[class*="icon"]
 			font-size: 18px
 			color: $color
 			vertical-align: middle
+	.dropdown-content
+		width: auto
 
 .basket
 	line-height: $line-height
@@ -222,7 +246,7 @@ span
 
 .b-price
 	vertical-align: middle
-	margin-left: 15px
+	margin-left: 13px
 	color: $color
 	font-family: $font-family2
 	font-size: 12px
@@ -244,15 +268,156 @@ span
 
 
 .user-menu 
+	width: 180px
 	list-style: none
 	&__item 
 		border-bottom: 1px solid #ececec
 		&:last-child 
 			border-bottom: none
 	&__link 
-		display: block
+		display: flex
+		align-items: center
 		color: $color
 		font-size: 12px
 		font-weight: 400
 		line-height: 40px
 		padding: 0 20px
+		[class*="icon"]
+			width: 18px
+			text-align: center
+			color: #ccc
+			font-size: 16px
+			margin-right: 15px
+		.badge 
+			margin-left: auto
+
+.cart
+	width: 300px
+	&-list 
+		list-style: none
+		&__item 
+			display: flex
+			align-items: center
+			border-bottom: 1px solid #ececec
+			padding: 10px
+		&__img 
+			width: 60px
+			margin-right: 20px
+			flex: none
+			text-align: center
+			img 
+				display: inline-block
+				max-width: 100%
+		&__info 
+			flex: 1
+			.product__title 
+				margin-bottom: 10px
+		&__details 
+			display: flex
+			align-items: center
+			justify-content: space-between
+			.price
+				margin-right: 10px
+		&__delete 
+			padding: 0 10px 0 0
+			margin-left: 20px
+			flex: none
+			color: #b6b6b6
+			font-size: 12px
+			a
+				color: inherit
+				&:hover 
+					color: $color
+	&-footer 
+		display: flex
+		align-items: center
+		padding: 20px 10px
+		.total 
+			width: 60px
+			flex: none
+			margin-right: 20px
+			text-align: right
+		.price 
+			margin-right: 28px
+.price 
+	color: $color
+	font-family: $font-family2, sans-serif
+	font-size: 12px
+	font-weight: 700
+	letter-spacing: 1.2px
+	&--danger 
+		color: $color-danger
+
+.total	
+	color: #b8b8b8
+	font-family: $font-family3, sans-serif
+	font-size: 12px
+	font-style: italic
+	line-height: 18px
+
+
+/* Content
+     ====================== */
+
+.header-inner
+	position: relative
+	background-position: right center
+	background-size: cover
+	background-repeat: no-repeat
+	height: 180px
+	padding: 20px 30px
+	display: flex
+	align-items: center
+	justify-content: center
+	flex-direction: column
+	&__title
+		color: $color
+		font-size: 48px
+		font-weight: 400
+	.category
+		display: block
+	.bread-crambs
+		position: absolute
+
+		left: 30px
+		top: 50%
+		transform: translate(0, -50%)
+
+.bread-crambs
+	list-style: none
+	display: flex
+	&__item 
+		margin-right: 4px
+	&__link 
+		color: #868686
+		font-size: 12px
+		font-weight: 400
+		&:hover 
+			color: $color
+
+.category 
+	color: $color-blue
+	font-family: $font-family2
+	font-size: 12px
+	font-weight: 700
+	text-transform: uppercase
+	letter-spacing: 1.2px
+
+.product 
+	&__title 
+		color: $color
+		font-size: 12px
+		font-weight: 400
+		line-height: 16px
+		a 
+			color: inherit
+			&:hover 
+				text-decoration: underline
+
+	&__details 
+		color: #b8b8b8
+		font-family: $font-family3, sans-serif
+		font-size: 12px
+		font-style: italic
+
+

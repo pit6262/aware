@@ -194,26 +194,78 @@
 					<span class="b-price">$165</span>
 				</a>
 				<div class="dropdown-content">
-					<ul class="dropdown-menu">
-						<li class="dropdown-menu__item">
-							<a href="#" class="dropdown-menu__link">Shirts</a>
-						</li>
-						<li class="dropdown-menu__item">
-							<a href="#" class="dropdown-menu__link">Shoes, Boots & Trainers</a>
-						</li>
-						<li class="dropdown-menu__item">
-							<a href="#" class="dropdown-menu__link">Shorts</a>
-						</li>
-						<li class="dropdown-menu__item">
-							<a href="#" class="dropdown-menu__link">Suits & Blazers</a>
-						</li>
-						<li class="dropdown-menu__item">
-							<a href="#" class="dropdown-menu__link">Sunglasses</a>
-						</li>
-						<li class="dropdown-menu__item">
-							<a href="#" class="dropdown-menu__link">Swimwear</a>
-						</li>
-					</ul>
+					<div class="cart">
+						<ul class="cart-list">
+							<li class="cart-list__item">
+								<div class="cart-list__img">
+									<a href="#"><img src="img/cart-list-img.png" alt=""></a>
+								</div>
+								<div class="cart-list__info">
+									<h6 class="product__title"><a href="#">New Balance Men's Street Backpack</a></h6>
+									<div class="cart-list__details">
+										<span class="price">$485</span>
+										<span class="product__details">
+											<span>S</span> • 
+											<span>Black</span> • 
+											<span>1 pcs</span>  
+										</span>
+									</div>
+								</div>
+								<div class="cart-list__delete">
+									<a href="#" class="js-remove-cart">
+										<span class="icon-close"><span class="path1"></span><span class="path2"></span></span>
+									</a>
+								</div>
+							</li>
+							<li class="cart-list__item">
+								<div class="cart-list__img">
+									<a href="#"><img src="img/cart-list-img1.png" alt=""></a>
+								</div>
+								<div class="cart-list__info">
+									<h6 class="product__title"><a href="#">Lyle & Scott Men's Short Sleeve Camo Pocket</a></h6>
+									<div class="cart-list__details">
+										<span class="price price--danger">$85</span>
+										<span class="product__details">  
+											<span>XXL</span> • 
+											<span>White</span> • 
+											<span>3 pcs</span>  
+										</span>
+									</div>
+								</div>
+								<div class="cart-list__delete">
+									<a href="#" class="js-remove-cart">
+										<span class="icon-close"><span class="path1"></span><span class="path2"></span></span>
+									</a>
+								</div>
+							</li>
+							<li class="cart-list__item">
+								<div class="cart-list__img">
+									<a href="#"><img src="img/cart-list-img2.png" alt=""></a>
+								</div>
+								<div class="cart-list__info">
+									<h6 class="product__title"><a href="#">Lyle & Scott Men's Short Sleeve Camo Pocket</a></h6>
+									<div class="cart-list__details">
+										<span class="price">$1 285</span>
+										<span class="product__details">
+											<span>M</span> • 
+											<span>Orange</span> • 
+											<span>89 pcs</span>  
+										</span>
+									</div>
+								</div>
+								<div class="cart-list__delete">
+									<a href="#" class="js-remove-cart">
+										<span class="icon-close"><span class="path1"></span><span class="path2"></span></span>
+									</a>
+								</div>
+							</li>
+						</ul>
+						<div class="cart-footer">
+							<span class="total">Total</span>
+							<span class="price">$3 285</span>
+							<a href="#" class="btn">Check Out</a>
+						</div>
+					</div>
 				</div>
 			</li>
 			<li class="profile-menu__item dropdown dropdown--right dropdown--white">
@@ -221,19 +273,19 @@
 				<div class="dropdown-content">
 					<ul class="user-menu">
 						<li class="user-menu__item">
-							<a href="#" class="user-menu__link">Profile</a>
+							<a href="#" class="user-menu__link"><span class="icon-user"></span>Profile</a>
 						</li>
 						<li class="user-menu__item">
-							<a href="#" class="user-menu__link">Wishlist</a>
+							<a href="#" class="user-menu__link"><span class="icon-heart"></span>Wishlist <span class="badge">2</span></a>
 						</li>
 						<li class="user-menu__item">
-							<a href="#" class="user-menu__link">Orders</a>
+							<a href="#" class="user-menu__link"><span class="icon-basket"></span>Orders</a>
 						</li>
 						<li class="user-menu__item">
-							<a href="#" class="user-menu__link">Settings</a>
+							<a href="#" class="user-menu__link"><span class="icon-gear"></span>Settings</a>
 						</li>
 						<li class="user-menu__item">
-							<a href="#" class="user-menu__link">Log out</a>
+							<a href="#" class="user-menu__link"><span class="icon-power"></span>Log out</a>
 						</li>
 					</ul>
 					
@@ -243,7 +295,20 @@
 	</header>
 
 	<main class="main">
-		
+		<section class="header-inner" style="background-image: url('img/header-inner.png');">
+			
+			<ul class="bread-crambs">
+				<li class="bread-crambs__item">
+					<a href="#" class="bread-crambs__link">Home</a> /
+				</li>
+				<li class="bread-crambs__item">
+					<a href="#" class="bread-crambs__link">Men</a> /
+				</li>
+			</ul>
+
+			<span class="category">men</span>
+			<h1 class="header-inner__title">Polo Shirts</h1>
+		</section>
 	</main>		
 	
 	<footer>
