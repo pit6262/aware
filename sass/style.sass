@@ -421,3 +421,111 @@ span
 		font-style: italic
 
 
+.filter
+	display: flex
+	border-bottom: 1px solid #ececec
+	min-height: 60px
+	&-sidebar 
+		display: flex
+		align-items: center
+		padding: 15px 30px
+		width: 240px
+		flex: none
+		border-right: 1px solid #ececec
+	&-content 
+		display: flex
+		align-items: center
+		padding: 15px 30px
+		flex: 1
+	&__title 
+		color: #979797
+		font-size: 12px
+		line-height: 16px
+
+	&-list 
+		list-style: none
+		margin-left: auto
+		display: flex
+		align-items: center
+		&__item 
+			margin-left: 10px
+			&:first-child 
+				margin-left: 0
+			&.active .filter-list__link 
+				color: $color
+		&__link 
+			font-size: 16px
+			color: #d5d5d5
+			&:hover 
+				color: #888
+
+.toggle-filter 
+	color: #d5d5d5
+	font-size: 16px
+	background-color: transparent
+	border: none
+	padding: 0
+	margin-right: 20px
+	transition: all 0.3s
+	&:hover 
+		color: $color-blue
+	.sr-only 
+		display: none
+
+
+.sort 
+	display: flex
+	position: relative
+	overflow: hidden
+	input 
+		position: absolute
+		left: -999px
+	input:checked + .sort__item
+		color: #fff
+		background-color: $color
+		padding: 0 20px
+	&__item 
+		display: flex
+		text-align: center
+		justify-content: center
+		align-items: center
+		height: 30px
+		margin-left: 20px
+		font-size: 12px
+		font-weight: 400
+		line-height: 16px
+		border-radius: 20px
+		cursor: pointer
+		&:hover 
+			color: $color-blue
+		[class*="icon"]
+			color: #d5d5d5
+			margin-left: 5px
+
+.hide
+	position: absolute
+	left: 0 
+	top: 0
+	height: 0 
+	width: 0
+	overflow: hidden
+	z-index: -1
+	opacity: 0
+	visibility: hidden
+
+.tab-cont 
+	opacity: 1
+	transition: opacity 0.4s
+	visibility: visible
+	&.hide
+		opacity: 0
+
+
+.box-main
+	display: flex
+	.sidebar 
+		width: 240px	
+		flex: none
+		border-right: 1px solid #ececec
+	.content 
+		flex: 1
