@@ -484,6 +484,11 @@ span
 		color: #fff
 		background-color: $color
 		padding: 0 20px
+		[class*="icon"] 
+			color: #fff
+			.path1:before 
+				content: '\e902'
+
 	&__item 
 		display: flex
 		text-align: center
@@ -529,3 +534,50 @@ span
 		border-right: 1px solid #ececec
 	.content 
 		flex: 1
+
+.accordion
+	border-bottom: 1px solid #ececec
+	&__head
+		height: 70px
+		display: flex
+		align-items: center
+		justify-content: space-between
+		padding: 15px 30px
+		border-top: 1px solid #ececec
+		cursor: pointer
+		&.open 
+			[class*="icon"]:before 
+				content: '\e909'
+		&:first-child 
+			border-top: none
+		[class*="icon"]
+			color: #b8b8b8
+			font-size: 18px
+			margin-left: 10px
+	&__title 
+		font-family: $font-family2
+		font-size: 14px
+		font-weight: 700
+		text-transform: uppercase
+		letter-spacing: 1.4px
+
+	&__body 
+		padding: 0 30px 25px
+
+.check-list
+	list-style: none
+	&__item 
+		margin-bottom: 10px
+	&__text 
+		color: #222222
+		font-size: 12px
+		font-weight: 400
+		line-height: 18px
+		cursor: pointer
+	&--column 
+		.check-list__item 
+			display: inline-block
+			vertical-align: top
+			margin-right: -4px
+			width: 50%
+			padding-right: 10px
