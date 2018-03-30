@@ -16,6 +16,18 @@ $(function(){
 		return false;
 	});
 
+
+	$('.toggle-filter').click(function(){
+		$(this).toggleClass('active');
+		$('.sidebar').toggleClass('open');
+		$('.box-product').toggleClass('full');
+	})
+
+	$('.toggle-menu').click(function(){
+		$(this).toggleClass('active');
+		$('.dropdown-content--menu').toggleClass('open');
+	})
+
 	$('.styler').styler();
 
 	$( "#slider-range" ).slider({

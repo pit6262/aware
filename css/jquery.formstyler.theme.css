@@ -190,26 +190,22 @@
 	cursor: pointer;
 }
 .jq-selectbox__select {
-	height: 32px;
-	padding: 0 45px 0 10px;
-	border: 1px solid #CCC;
-	border-bottom-color: #B3B3B3;
-	border-radius: 4px;
-	background: linear-gradient(#FFF, #E6E6E6);
-	box-shadow: inset 1px -1px #F1F1F1, inset -1px 0 #F1F1F1, 0 1px 2px rgba(0,0,0,.1);
-	font: 14px/32px Arial, sans-serif;
-	color: #333;
-	text-shadow: 1px 1px #FFF;
+	height: 30px;
+	padding: 0 35px 0 20px;
+	border-radius: 20px;
+	background-color: #f6f6f6;
+	font: italic 12px/30px "PT Serif", Arial, sans-serif;
+	color: #868686;
 }
 .jq-selectbox__select:hover {
-	background: linear-gradient(#F6F6F6, #E6E6E6);
+	
 }
 .jq-selectbox__select:active {
 	background: #F5F5F5;
-	box-shadow: inset 1px 1px 3px #DDD;
+	
 }
 .jq-selectbox.focused .jq-selectbox__select {
-	border: 1px solid #5794BF;
+	
 }
 .jq-selectbox.disabled .jq-selectbox__select {
 	border-color: #CCC;
@@ -222,25 +218,18 @@
 	width: 100%;
 }
 .jq-selectbox .placeholder {
-	color: #888;
+	color: #868686;
 }
 .jq-selectbox__trigger {
 	position: absolute;
 	top: 0;
 	right: 0;
-	width: 34px;
+	width: 30px;
 	height: 100%;
-	border-left: 1px solid #CCC;
+	background: url("../img/selcet-arrow.png") no-repeat center
 }
 .jq-selectbox__trigger-arrow {
-	position: absolute;
-	top: 14px;
-	right: 12px;
-	width: 0;
-	height: 0;
-	border-top: 5px solid #999;
-	border-right: 5px solid transparent;
-	border-left: 5px solid transparent;
+	
 }
 .jq-selectbox:hover .jq-selectbox__trigger-arrow {
 	border-top-color: #000;

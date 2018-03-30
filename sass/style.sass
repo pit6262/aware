@@ -49,6 +49,9 @@ span
 .text-right
 	text-align: right !important
 
+.text-error
+	color: $color-danger
+
 
 /* Icons
      ====================== */
@@ -79,7 +82,21 @@ span
 	font-weight: 400
 
 
+.toggle-menu 
+	display: none
 
+
+	
+.favorite
+	color: #b8b8b8
+	font-family: "PT Serif", sans-serif
+	font-size: 12px
+	font-style: italic
+	line-height: 18px
+	.icon 
+		font-size: 14px
+	&:hover 
+		color: #fff
 
 /* Header
      ====================== */
@@ -96,6 +113,7 @@ span
 .logo 
 	margin-right: 38px
 	padding-bottom: 7px
+
 .main-menu
 	list-style: none
 	margin-right: 70px
@@ -166,8 +184,6 @@ span
 		bottom: 100%
 		+arr(14, 7, $color, t)
 
-
-
 .dropdown-menu 
 	list-style: none
 	&__item 
@@ -217,8 +233,6 @@ span
 		font-size: 20px
 		color: $color
 		margin-right: 6px
-
-
 
 .profile-menu
 	list-style: none
@@ -339,6 +353,7 @@ span
 			text-align: right
 		.price 
 			margin-right: 28px
+
 .price 
 	color: $color
 	font-family: $font-family2, sans-serif
@@ -359,6 +374,9 @@ span
 /* Content
      ====================== */
 
+/* 
+ *	==== Header Inner
+ */
 .header-inner
 	position: relative
 	background-position: right center
@@ -370,6 +388,8 @@ span
 	align-items: center
 	justify-content: center
 	flex-direction: column
+	text-align: center
+	
 	&__title
 		color: $color
 		font-size: 48px
@@ -402,9 +422,65 @@ span
 	font-weight: 700
 	text-transform: uppercase
 	letter-spacing: 1.2px
+	
+
+.sidebar 
+	transition: margin-left 0.4s	
+
+/* 
+ *	==== Product
+ */
+
+.box-product
+	display: flex
+	flex-wrap: wrap
+	margin-right: -1px
+	.product__title
+		height: 30px
+		overflow: hidden
+		
 
 .product 
+	position: relative
+	border-right: 1px solid #ececec
+	border-bottom: 1px solid #ececec
+	width: 14.285%
+	padding: 26px 30px
+	text-align: center
+	&:hover 
+		.product__title, .price
+			color: #fff
+		.product__footer
+			position: relative
+			z-index: 2
+
+		.product__card 
+			z-index: 2
+			opacity: 1
+			visibility: visible
+
+		&:before 
+			height: 100%
+			width: 100%
+			left: 0
+			top: 0
+	
+	&:before
+		content: ''
+		display: block
+		z-index: 1
+		position: absolute
+		top: 50%
+		left: 50%
+		height: 0
+		width: 0
+		background: #222
+		opacity: 0.95
+		transition: all 0.4s
+
 	&__title 
+		position: relative
+		z-index: 2
 		color: $color
 		font-size: 12px
 		font-weight: 400
@@ -413,14 +489,65 @@ span
 			color: inherit
 			&:hover 
 				text-decoration: underline
-
+		
+	&__img 
+		position: relative
+		margin: 45px 0 60px
+		img 
+			margin: 0 auto
+	&__card 
+		opacity: 0
+		visibility: hidden
+		position: absolute
+		left: -30px
+		right: -30px
+		padding: 0 10px
+		text-align: center
+		
+		top: 50%
+		transform: translate(0,-50%)
+		transition: all 0.4s
+		.btn
+			margin-left: 10px
+		.favorite
+			display: inline-block
+			margin-top: 15px
 	&__details 
 		color: #b8b8b8
 		font-family: $font-family3, sans-serif
 		font-size: 12px
 		font-style: italic
+	
+	&__footer
+		display: flex
+		align-items: center
+		justify-content: center
+		.price, .discount, .pbadge
+			width: 33.33%
+		.discount
+			text-align: right
+			
+		&.sale 
+			.price 
+				color: $color-danger
+		&.hit, &.new
+			justify-content: flex-start
 
+	.price
+		transition: all 0.4s
+	
 
+.discount
+	color: #a1a1a1
+	font-family: Oswald
+	font-size: 8px
+	font-weight: 700
+	text-decoration: line-through
+	letter-spacing: 0.8px		
+
+/* 
+ *	==== Filter
+ */
 .filter
 	display: flex
 	border-bottom: 1px solid #ececec
@@ -581,3 +708,204 @@ span
 			margin-right: -4px
 			width: 50%
 			padding-right: 10px
+
+
+.paginator
+	padding: 0 30px 
+	height: 60px
+	display: flex
+	align-items: center
+	&__item 
+		width: 33.33%
+		color: #979797
+		font-size: 12px
+		font-weight: 400
+		line-height: 18px
+		&:last-child 
+			text-align: right
+
+		&.load
+			text-align: center
+			color: $color
+			.icon 
+				margin-right: 15px
+				font-size: 14px
+			
+			
+/* Media
+     ====================== */
+
+
++max-screen(1850px)
+	.product
+		width: 16.666%
+
+		&__card 
+			.btn
+				margin-left: 5px
+
++max-screen(1599px)
+	.product
+		width: 20%
+
+	.logo, .main-menu, .search, .location
+		margin-right: 20px
+
++max-screen(1399px)
+	.header
+		position: relative
+		
+	.product
+		width: 25%
+
+	.main-menu
+		display: none
+
+	.toggle-menu 
+		display: block
+		border: none
+		padding: 0
+		background-color: transparent
+		margin-right: 35px
+		font-size: 18px
+
+	.dropdown-content
+		&__item 
+			padding: 30px
+			width: 25%
+			&:not(:last-child)
+				border-right: 1px solid #353535
+		&__title
+			color: #fff
+			font-family: Oswald
+			font-size: 14px
+			font-weight: 700
+			text-transform: uppercase
+			letter-spacing: 1.4px
+			margin-bottom: 17px
+			line-height: 30px
+		&--menu
+			padding: 0
+			display: flex
+			width: 100%
+			&.open
+				opacity: 1
+				margin-top: 0
+				left: 0px
+				visibility: visible
+
+			&:before
+				left: 30px
+			
+	.logo, .main-menu, .search, .location
+		margin-right: 40px
+
+	.dropdown-menu + .dropdown-content__title
+		margin-top: 45px
+
+	.hr
+		height: 1px
+		background-color: #353535
+		margin: 25px 0
+
++max-screen(1180px)
+	.product
+		width: 33.33%
+
++max-screen(960px)
+
+	.filter-sidebar
+		width: auto
+		border-right: none
+	.toggle-filter
+		height: 30px
+		display: flex
+		align-items: center
+		border: 2px solid #d5d5d5
+		width: 120px
+		padding: 0 20px
+		border-radius: 20px
+		font-family: $font-family
+		&:hover 
+			color: #d5d5d5
+		&.active
+			color: #1f4ba5
+			border-color: #1f4ba5
+		.sr-only
+			display: inline-block
+			font-size: 12px
+			font-weight: 400
+			line-height: 12px
+			margin-left: 15px
+			padding-top: 1px
+	.product 
+		width: 25%
+	.sidebar
+		margin-left: -240px
+		&.open 
+			margin-left: 0
+
+	.box-product.full
+		.product 
+			width: 33.33%
+
+
+
++max-screen(930px)
+	.product
+		width: 33.33%
+	.box-product.full
+		.product 
+			width: 50%
+
++max-screen(767px)
+	.box-product .product__title
+		height: auto
+		
+	.product
+		width: 100%
+		padding-left: 20px
+		padding-right: 20px
+		&__img 
+			margin: 22px 0 35px
+
+	.box-product.full
+		.product 
+			width: 100%
+
+	.filter
+		flex-direction: column
+		&-sidebar
+			padding-left: 20px
+			padding-right: 20px
+			border-bottom: 1px solid #ececec
+		&-content
+			padding-left: 20px
+			padding-right: 20px
+			.filter__title
+				display: none
+				
+
+	.sort__item
+		margin-left: 0
+		margin-right: 13px
+
+	.paginator
+		padding: 0 20px
+		&__item 
+			font-size: 10px
+			&.load .icon
+				margin-right: 5px
+
+	.header-inner 
+		min-height: 150px
+		height: auto
+		padding-top: 40px
+		padding-bottom: 40px
+		.bread-crambs
+			top: 25px
+			transform: none
+
+	.header-inner__title
+		font-size: 28px
+		line-height: 35px
