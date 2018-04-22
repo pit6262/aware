@@ -209,6 +209,7 @@ span
 		color: $color
 		font-family: "PT Serif", sans-serif
 		font-size: 12px
+		line-height: 12px
 		border: none
 		border-radius: 20px
 		+placeholder
@@ -447,23 +448,24 @@ span
 	width: 14.285%
 	padding: 26px 30px
 	text-align: center
-	&:hover 
-		.product__title, .price
-			color: #fff
-		.product__footer
-			position: relative
-			z-index: 2
+	+min-screen(992px)
+		&:not(.product--horizontal):hover 
+			.product__title, .price
+				color: #fff
+			.product__footer
+				position: relative
+				z-index: 2
 
-		.product__card 
-			z-index: 2
-			opacity: 1
-			visibility: visible
+			.product__card 
+				z-index: 2
+				opacity: 1
+				visibility: visible
 
-		&:before 
-			height: 100%
-			width: 100%
-			left: 0
-			top: 0
+			&:before 
+				height: 100%
+				width: 100%
+				left: 0
+				top: 0
 	
 	&:before
 		content: ''
@@ -495,6 +497,8 @@ span
 		margin: 45px 0 60px
 		img 
 			margin: 0 auto
+
+
 	&__card 
 		opacity: 0
 		visibility: hidden
@@ -536,6 +540,63 @@ span
 	.price
 		transition: all 0.4s
 	
+	&__category 
+		color: #b8b8b8
+		font-family: "PT Serif", sans-serif
+		font-size: 12px
+		font-style: italic
+		line-height: 18px
+	// horiaontal 
+	&--horizontal 
+		display: flex
+		align-items: center
+		text-align: left
+		
+		width: 100% !important
+		padding: 15px
+		.product__card
+			position: static
+			opacity: 1
+			visibility: visible
+			transform: none
+			text-align: left
+			padding: 0
+			
+		.product__img 
+			margin: 0 44px 0 0 
+			flex: none
+		.product__content
+			flex: 1
+			margin-right: 30px
+		.product__footer
+			display: block
+			
+			width: 85px
+			margin-right: 20px
+			.price, .discount, .pbadge
+				width: auto
+				
+		.product__title
+			height: auto !important
+			margin-bottom: 15px
+
+		.price
+			display: block
+			margin-bottom: 20px
+			font-size: 14px
+		.pbadge, .discount 
+			vertical-align: middle
+
+		.discount 
+			margin-left: 10px
+			
+		// &:before
+		// 	display: none
+		// &:hover
+		// 	.product__title, .price
+		// 		color: $color
+
+
 
 .discount
 	color: #a1a1a1
@@ -715,6 +776,8 @@ span
 	height: 60px
 	display: flex
 	align-items: center
+	border-top: 1px solid #ececec
+	margin-top: -1px
 	&__item 
 		width: 33.33%
 		color: #979797
@@ -840,10 +903,21 @@ span
 			padding-top: 1px
 	.product 
 		width: 25%
+	.box-main 
+		position: relative
+		
+	.content
+		transition: transform 0.4s
+
 	.sidebar
 		margin-left: -240px
+		height: 100%
+		overflow-y: auto
+		position: absolute
 		&.open 
 			margin-left: 0
+		&.open + .content 
+			transform: translate(240px, 0)
 
 	.box-product.full
 		.product 
@@ -858,20 +932,85 @@ span
 		.product 
 			width: 50%
 
++min-screen(768px)
+	.hidden-ipad
+		display: none
+
 +max-screen(767px)
+	.header
+		padding-left: 20px
+		padding-right: 20px
+		height: 65px
+
+	.toggle-menu, .logo, .main-menu, .location
+		margin-right: 25px
+	.search
+		margin-right: 15px
+	.location, .hidden-iphone
+		display: none
+		
+	.dropdown-content--menu
+		display: block
+		
+	.dropdown-content__item
+		width: auto
+		padding: 0
+		.hr
+			display: none
+			
+		
+		
+	.dropdown-menu
+		display: none
+		padding-left: 30px
+		padding-bottom: 20px
+		border-bottom: 1px solid #353535
+
+	.dropdown-content__title
+		padding: 15px 20px
+		margin-bottom: 0
+		border-bottom: 1px solid #353535
+		br 
+			display: none
+			
+		&.d-open 
+			border-bottom-color: transparent
+			& + .dropdown-menu
+				display: block
+
+	.dropdown-menu + .dropdown-content__title
+		margin-top: 0
+
+	.profile-menu
+		margin-right: -10px
+	.profile-menu__link
+		line-height: 65px
+		padding: 0 10px
+
+	.header-inner
+		padding-left: 20px
+		padding-right: 20px
+
+	.header-inner .bread-crambs
+		left: 20px
+
 	.box-product .product__title
 		height: auto
 		
 	.product
-		width: 100%
+		width: 50%
 		padding-left: 20px
 		padding-right: 20px
 		&__img 
 			margin: 22px 0 35px
 
+		&--horizontal 
+			.product__img, .product__content, .product__footer
+				margin-right: 20px
+
 	.box-product.full
 		.product 
-			width: 100%
+			width: 50%
 
 	.filter
 		flex-direction: column
@@ -909,3 +1048,37 @@ span
 	.header-inner__title
 		font-size: 28px
 		line-height: 35px
+
++max-screen(680px)
+	.product
+		&--horizontal 
+			flex-wrap: wrap
+			.product__img 
+				margin-bottom: 20px
+				
+			.product__content
+				margin-right: 0
+				min-width: 50%
+
+				margin-bottom: 20px
+			.product__footer, .product__card 
+				width: 73.2%
+				margin-right: 0
+			.product__footer 
+				width: 75px
+				padding-left: 10px
+				
+				
+				
+
+
++max-screen(479px)
+	.product, .box-product.full .product
+		width: 100%
+
+	.b-price, .search__button
+		display: none
+
+	.search__input
+		padding: 0 15px
+		

@@ -43,6 +43,9 @@ $(function(){
     $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) );
     $( "#amount1" ).val( "$" + $( "#slider-range" ).slider( "values", 1 ) );
 	
+	$('.dropdown-content__title').click(function(){
+		$(this).toggleClass('d-open');
+	})
 
 });
 
